@@ -14,12 +14,12 @@ public class ResetLabel : MonoBehaviour {
 		var resetter = Player.GetComponent<Resetter>();
 		GetComponent<Text>().enabled = (resetter.NeedReset || lives.Dead) && cp.FinishPosition < 0;
 		if (lives.Dead || lives.Value == 0 && fuel.Value <= 0) {
-			GetComponent<Text>().text = "Game over!\nPress Return to try again";
+			GetComponent<Text>().text = "Game over!\nPress Return / (Start) to try again";
 		} else if (fuel.Value <= 0) {
-			GetComponent<Text>().text = "Out of fuel!\nPress R to reset";
+			GetComponent<Text>().text = "Out of fuel!\nPress R / (Y) to reset";
 		}
 		else {
-			GetComponent<Text>().text = "Press R to reset";
+			GetComponent<Text>().text = "Press R / (Y) to reset";
 		}
 	}
 }

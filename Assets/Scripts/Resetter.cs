@@ -25,6 +25,9 @@ public class Resetter : MonoBehaviour {
 		if (Input.GetButtonDown("Submit")) {
 			SceneManager.LoadScene("Main");
 		}
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Application.Quit();
+		}
 	}
 
 	// Use this for initialization
