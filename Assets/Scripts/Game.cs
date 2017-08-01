@@ -70,13 +70,21 @@ public class Game : MonoBehaviour {
 	}
 
 	private void SpawnRandomPickup() {
-		if (FindObjectsOfType<Pickup>().Length >= 12) {
+		if (FindObjectsOfType<Pickup>().Length >= 15) {
 			return;
 		}
 		var pickupPrefab = Pickups[Random.Range(0, Pickups.Length)];
-		var pickup = Instantiate(pickupPrefab);
-		float t = Random.Range(0, 3) / 3f;
-		Track.UpdateTransformTo(pickup.transform, t, Random.Range(-4f, 4f));
+
+		for (int attempt = 0; attempt < 10; attempt++) {
+			float t = Random.Range(0, 3) / 3f;
+			float offset = Random.Range(-2, 2) * 2;
+			var spawnPoint = Track.GetPointAt(t, offset);
+			if (!Physics.CheckSphere(spawnPoint, 0.5f, 1 << 11)) {
+				var pickup = Instantiate(pickupPrefab);
+				Track.UpdateTransformTo(pickup.transform, t, offset);
+				return;
+			}
+		}
 	}
 
 	public int RegisterFinish(Checkpointing checkpointing) {

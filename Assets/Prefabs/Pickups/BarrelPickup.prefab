@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4974498483736768}
   - component: {fileID: 33861308031798004}
   - component: {fileID: 23202266383601424}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4107620780344082}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4370427510039424}
   - component: {fileID: 95445714565915906}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ExplosiveBarrelAttach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4606937607478458}
   - component: {fileID: 33902098647762276}
   - component: {fileID: 23887892821948284}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4785069181918212}
   - component: {fileID: 33465551620371390}
   - component: {fileID: 23595266112847908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4954531503444508}
   - component: {fileID: 33246617626049964}
   - component: {fileID: 23531033242437784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 135361340044517052}
   - component: {fileID: 114117357573252968}
   - component: {fileID: 114401683744073172}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BarrelPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

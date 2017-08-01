@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466308001811440}
   - component: {fileID: 95851864725258938}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 135463067137835902}
   - component: {fileID: 114755634326885988}
   - component: {fileID: 114244832261793758}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MinigunPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4464053099816430}
   - component: {fileID: 95414694404416700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MinigunAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4472068935713402}
   - component: {fileID: 33047083141070486}
   - component: {fileID: 23839636500309012}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4504066153347338}
   - component: {fileID: 33752691750662436}
   - component: {fileID: 23152352866316494}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
