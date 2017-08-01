@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour {
@@ -13,6 +14,12 @@ public class Game : MonoBehaviour {
 	public GameObject[] Pickups;
 	public int TotalLaps;
 	private int finishCounter;
+	private bool _inProgress;
+	private List<GameObject> _aiList = new List<GameObject>();
+
+	public bool InProgress {
+		get { return _inProgress; }
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +30,7 @@ public class Game : MonoBehaviour {
 		for (int i = 0; i < 8; i++) {
 			GameObject ai = Instantiate(AiPrefab);
 			Spawn(ai, t, offset, color);
+			_aiList.Add(ai);
 
 			ot = ai.AddComponent<OffTrackDetector>();
 			ot.Track = Track;
@@ -32,6 +40,8 @@ public class Game : MonoBehaviour {
 			cp.Track = Track;
 			ai.AddComponent<AiWeapon>();
 			ai.AddComponent<Resetter>().Automatic = true;
+			ai.GetComponent<CarAIControl>().enabled = false;
+			ai.GetComponent<Resetter>().enabled = false;
 
 			t -= 0.01f;
 			offset += 2f;
@@ -43,6 +53,8 @@ public class Game : MonoBehaviour {
 		Spawn(Player, t, offset, 0);
 		ot = Player.AddComponent<OffTrackDetector>();
 		ot.Track = Track;
+		Player.GetComponent<CarUserControl>().enabled = false;
+		Player.GetComponent<Resetter>().enabled = false;
 
 		for (int i = 0; i < 12; i++) {
 			SpawnRandomPickup();
@@ -89,5 +101,15 @@ public class Game : MonoBehaviour {
 
 	public int RegisterFinish(Checkpointing checkpointing) {
 		return finishCounter++;
+	}
+
+	public void StartRace() {
+		_inProgress = true;
+		foreach (var ai in _aiList) {
+			ai.GetComponent<CarAIControl>().enabled = true;
+			ai.GetComponent<Resetter>().enabled = true;
+		}
+		Player.GetComponent<CarUserControl>().enabled = true;
+		Player.GetComponent<Resetter>().enabled = true;
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Resetter : MonoBehaviour {
 	[SerializeField] private float m_WaitTime = 3f;           // time to wait before self righting
@@ -19,15 +18,13 @@ public class Resetter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ((!Automatic && Input.GetButtonDown("Fire3")) || (Automatic && m_needReset)) {
-			m_LastOkTime = Time.time;
-			GetComponent<OffTrackDetector>().RespawnAtCheckpoint(GetComponent<Fuel>() && GetComponent<Fuel>().Value <= 0);
+			DoReset();
 		}
-		if (Input.GetButtonDown("Submit")) {
-			SceneManager.LoadScene("Main");
-		}
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Application.Quit();
-		}
+	}
+
+	private void DoReset() {
+		m_LastOkTime = Time.time;
+		GetComponent<OffTrackDetector>().RespawnAtCheckpoint(GetComponent<Fuel>() && GetComponent<Fuel>().Value <= 0);
 	}
 
 	// Use this for initialization
@@ -35,6 +32,9 @@ public class Resetter : MonoBehaviour {
 		m_Rigidbody = GetComponent<Rigidbody>();
 	}
 
+	private void OnEnable() {
+		m_LastOkTime = Time.time;
+	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
